@@ -1,0 +1,14 @@
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\bin\Debug\netcoreapp3.1\CursoDesignPatterns.exe
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\bin\Debug\netcoreapp3.1\CursoDesignPatterns.deps.json
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\bin\Debug\netcoreapp3.1\CursoDesignPatterns.runtimeconfig.json
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\bin\Debug\netcoreapp3.1\CursoDesignPatterns.runtimeconfig.dev.json
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\bin\Debug\netcoreapp3.1\CursoDesignPatterns.dll
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\bin\Debug\netcoreapp3.1\CursoDesignPatterns.pdb
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\obj\Debug\netcoreapp3.1\CursoDesignPatterns.csproj.AssemblyReference.cache
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\obj\Debug\netcoreapp3.1\CursoDesignPatterns.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\obj\Debug\netcoreapp3.1\CursoDesignPatterns.AssemblyInfoInputs.cache
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\obj\Debug\netcoreapp3.1\CursoDesignPatterns.AssemblyInfo.cs
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\obj\Debug\netcoreapp3.1\CursoDesignPatterns.csproj.CoreCompileInputs.cache
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\obj\Debug\netcoreapp3.1\CursoDesignPatterns.dll
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\obj\Debug\netcoreapp3.1\CursoDesignPatterns.pdb
+C:\Users\jessica.ambrust\Documents\PDI\Alura\Design Patterns C# I - Boas práticas de programação\CursoDesignPatterns\CursoDesignPatterns\obj\Debug\netcoreapp3.1\CursoDesignPatterns.genruntimeconfig.cache
