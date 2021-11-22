@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CursoDesignPatterns.Investimento;
+using System;
 using System.Collections.Generic;
 
 namespace CursoDesignPatterns.Relatorio

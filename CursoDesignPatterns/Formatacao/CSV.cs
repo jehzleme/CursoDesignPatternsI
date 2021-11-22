@@ -15,7 +15,7 @@ namespace CursoDesignPatterns.Formatacao
         public void Formatar(Requisicao requisicao, Conta conta)
         {
             if (requisicao.Formato == Formato.CSV)
-                Console.WriteLine($"{conta.Saldo};{conta.NomeTitular}");
+                Console.WriteLine($"{conta.Saldo};{conta.Titular}");
             
             Proximo.Formatar(requisicao, conta);
         }

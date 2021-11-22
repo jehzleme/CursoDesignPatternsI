@@ -20,7 +20,7 @@ namespace CursoDesignPatterns.Formatacao
         public void Formatar(Requisicao requisicao, Conta conta)
         {
             if (requisicao.Formato == Formato.PORCENTO)
-                Console.WriteLine($"{conta.Saldo}%{conta.NomeTitular}");
+                Console.WriteLine($"{conta.Saldo}%{conta.Titular}");
 
             else if (Proximo != null)
                 Proximo.Formatar(requisicao, conta);

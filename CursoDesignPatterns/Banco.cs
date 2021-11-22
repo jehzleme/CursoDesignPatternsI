@@ -1,4 +1,4 @@
-﻿namespace CursoDesignPatterns.Relatorio
+﻿namespace CursoDesignPatterns
 {
     public class Banco
     {

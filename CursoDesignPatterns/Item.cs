@@ -1,4 +1,4 @@
-﻿namespace CursoDesignPatterns.Imposto
+﻿namespace CursoDesignPatterns
 {
     public class Item
     {

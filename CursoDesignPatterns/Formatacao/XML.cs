@@ -15,7 +15,7 @@ namespace CursoDesignPatterns.Formatacao
         public void Formatar(Requisicao requisicao, Conta conta)
         {
             if (requisicao.Formato == Formato.XML)
-                Console.WriteLine($"<Conta>\n<Saldo>{conta.Saldo}</Saldo>\n<NomeTitular>{conta.NomeTitular}</NomeTitular>\n</Conta>");
+                Console.WriteLine($"<Conta>\n<Saldo>{conta.Saldo}</Saldo>\n<NomeTitular>{conta.Titular}</NomeTitular>\n</Conta>");
 
             Proximo.Formatar(requisicao, conta);
         }
