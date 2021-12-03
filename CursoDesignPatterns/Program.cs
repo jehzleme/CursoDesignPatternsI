@@ -5,6 +5,7 @@ using CursoDesignPatterns.Formatacao;
 using CursoDesignPatterns.Imposto;
 using CursoDesignPatterns.Investimento;
 using CursoDesignPatterns.Relatorio;
+using CursoDesignPatterns.Venda;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -140,26 +141,40 @@ namespace CursoDesignPatterns
 
             //reforma.Finalizar();
 
-            //StateConta
-            Conta conta = new Conta("Jehz", "165", "123456", 100, new DateTime(2021, 05, 10));
-           
+            ////StateConta
+            //Conta conta = new Conta("Jehz", "165", "123456", 100, new DateTime(2021, 05, 10));
 
-            Console.WriteLine($"Saldo inicial: {conta.Saldo}");
 
-            conta.Depositar(100);
-            Console.WriteLine($"Saldo após deposito em saldo positivo: {conta.Saldo}");
+            //Console.WriteLine($"Saldo inicial: {conta.Saldo}");
 
-            conta.Sacar(200);
-            Console.WriteLine($"Saldo após saque em saldo positivo: {conta.Saldo}");
+            //conta.Depositar(100);
+            //Console.WriteLine($"Saldo após deposito em saldo positivo: {conta.Saldo}");
 
-            conta.Depositar(100);
-            Console.WriteLine($"Saldo após deposito em saldo negativo: { conta.Saldo}");
+            //conta.Sacar(200);
+            //Console.WriteLine($"Saldo após saque em saldo positivo: {conta.Saldo}");
 
-            conta.Sacar(200);
-            Console.WriteLine($"Saldo após saque em saldo positivo: {conta.Saldo}");
-            
-            conta.Sacar(200);
-            Console.WriteLine($"Saldo após saque em saldo negativo: {conta.Saldo}"); // esperado exception
+            //conta.Depositar(100);
+            //Console.WriteLine($"Saldo após deposito em saldo negativo: { conta.Saldo}");
+
+            //conta.Sacar(200);
+            //Console.WriteLine($"Saldo após saque em saldo positivo: {conta.Saldo}");
+
+            //conta.Sacar(200);
+            //Console.WriteLine($"Saldo após saque em saldo negativo: {conta.Saldo}"); // esperado exception
+
+            //Venda
+            NotaFiscalBuilder criador = new NotaFiscalBuilder();
+            criador.InserirEmpresa("Empresa Tal")
+            .InserirCnpj("23.456.789/0001-12")
+            .InserirItem(new ItemNota("Item1", 10.5))
+            .InserirItem(new ItemNota("Item2", 100.5))
+            .InserirData(null)
+            .InserirObservacoes("uma obs");
+
+            var nf = criador.Construir();
+
+            Console.WriteLine(nf.Impostos);
+            Console.WriteLine(nf.ValorBruto);
 
             Console.ReadKey();
         }
