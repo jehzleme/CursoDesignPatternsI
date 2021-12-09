@@ -171,6 +171,11 @@ namespace CursoDesignPatterns
             .InserirData(null)
             .InserirObservacoes("uma obs");
 
+            criador.AdicionarAcao(new EnviadorEmail());
+            criador.AdicionarAcao(new NotaFiscalDao());
+            criador.AdicionarAcao(new EnviadorSms());
+            criador.AdicionarAcao(new Multiplicador(10));
+
             var nf = criador.Construir();
 
             Console.WriteLine(nf.Impostos);

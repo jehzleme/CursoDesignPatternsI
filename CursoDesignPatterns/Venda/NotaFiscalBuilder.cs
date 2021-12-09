@@ -12,11 +12,29 @@ namespace CursoDesignPatterns.Venda
         public DateTime Data { get; private set; }
         public string Observacoes { get; private set; }
         
-        private IList<ItemNota> _todosItens = new List<ItemNota>();
+        private ICollection<ItemNota> _todosItens = new List<ItemNota>();
+
+        private ICollection<IAcaoNotaGerada> _todasAcoes;
+
+        public NotaFiscalBuilder(ICollection<IAcaoNotaGerada> todasAcoes)
+        {
+            _todasAcoes = todasAcoes;
+        }
 
         public NotaFiscal Construir()
         {
-            return new NotaFiscal(RazaoSocial, Cnpj, Data, ValorTotal, Impostos, _todosItens, Observacoes);
+            var nf = new NotaFiscal(RazaoSocial, Cnpj, Data, ValorTotal, Impostos, _todosItens, Observacoes);
+            
+            foreach (var acao in _todasAcoes)
+            {
+                acao.Executar(nf);
+            }
+            return nf;
+        }
+
+        public void AdicionarAcao(IAcaoNotaGerada acao)
+        {
+            _todasAcoes.Add(acao);
         }
 
         public NotaFiscalBuilder InserirEmpresa(string razaoSocial)
