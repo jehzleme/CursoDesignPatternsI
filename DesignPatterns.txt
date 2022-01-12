@@ -1,0 +1,127 @@
+
+Strategy: ISS/ICMS estratégias de cálculo de imposto, implementadas a partir da interface
+
+Quando utilizamos uma hierarquia, como fizemos com a interface Imposto e as implementações ICMS e ISS, 
+e recebemos o tipo mais genérico como parâmetro, para ganharmos o polimorfismo na regra que será executada, 
+simplificando o código e sua evolução, estamos usando o Design Pattern chamado Strategy.
+
+// "".Equals(imposto) e não imposto.Equals("") as strings nunca serão nulas, se imposto for nulo, apenas devolve false
+
+
+O Strategy nos oferece uma maneira flexível para escrever diversos algoritmos diferentes, 
+e de passar esses algoritmos para classes clientes que precisam deles. 
+Esses clientes desconhecem qual é o algoritmo "real" que está sendo executado, 
+e apenas manda o algoritmo rodar. Isso faz com que o código da classe cliente fique bastante desacoplado 
+das implementações concretas de algoritmos, possibilitando assim com que esse cliente consiga trabalhar 
+com N diferentes algoritmos sem precisar alterar o seu código.
+
+---
+
+Chain of Responsibility: Regras para Desconto com condições, não atendendo uma, 
+chama a outra ("Proximo"), implementadas a partir da interface.
+
+
+Esses descontos formam como se fosse uma "corrente", ou seja, um ligado ao outro. 
+Daí o nome do padrão de projeto: Chain of Responsibility. 
+A ideia do padrão é resolver problemas como esses: de acordo com o cenário, devemos realizar alguma ação. 
+Ao invés de escrevermos código procedural, e deixarmos um único método descobrir o que deve ser feito,
+quebramos essas responsabilidades em várias diferentes classes, e as unimos como uma corrente.
+
+A classe SemDesconto não atribui o próximo desconto, pois ela não possui um próximo. 
+Na realidade, ela é o ponto final da nossa cadeia de responsabilidades.
+
+O padrão Chain of Responsibility cai como uma luva quando temos uma lista de comandos a serem executados 
+de acordo com algum cenário em específico, e sabemos também qual o próximo cenário que deve ser validado, 
+caso o anterior não satisfaça a condição.
+
+Nesses casos, o Chain of Responsibility nos possibilita a separação de responsabilidades em classes 
+pequenas e enxutas, e ainda provê uma maneira flexível e desacoplada de juntar esses comportamentos novamente.
+
+---
+
+Template Method: 
+Podemos deixar explícito nesse código que cada um desses métodos são "buracos" e devem ser implementados por classes-filhas.
+Logo, podemos tornar esses métodos abstratos!
+
+Veja que ambos as classes de impostos só implementam as partes "que faltam" do algoritmo!
+A classe TemplateDeImpostoCondicional possui um método que funciona como um template, ou seja,
+um molde, para as classes filhas. Daí o nome do padrão de projeto: Template Method.
+
+Veja que o uso do padrão evitou a repetição de código, e ainda facilitou a implementação das diferentes variações do algoritmo.
+
+Quando temos diferentes algoritmos que possuem estruturas parecidas, o Template Method é uma boa solução. 
+Com ele, conseguimos definir, em um nível mais macro, a estrutura do algoritmo e deixar "buracos", 
+que serão implementados de maneira diferente por cada uma das implementações específicas.
+
+Dessa forma, reutilizamos ao invés de repetirmos código, e facilitamos possíveis evoluções,
+tanto do algoritmo em sua estrutura macro, quanto dos detalhes do algoritmo,
+já que cada classe tem sua responsabilidade bem separada.
+
+
+---
+
+Decorator:
+Comportamentos compostos. Composição é feita através de um construtor que recebe o outro comportamento, 
+e um construtor default que diz que o próximo comportamento é nulo. 
+
+Sempre que percebemos que temos comportamentos que podem ser compostos por comportamentos de outras classes 
+envolvidas em uma mesma hierarquia, como foi o caso dos impostos, que podem ser composto por outros impostos. 
+O Decorator introduz a flexibilidade na composição desses comportamentos, bastando escolher no momento da instanciação, 
+quais instancias serão utilizadas para realizar o trabalho.
+
+---
+State: Dependendo do estado que o objeto se encontra, algumas ações podem ser diferentes.
+Essa é a grande graça da orientação a objetos! Classes pequenas e com responsabilidades bem definidas. 
+E, com a ajuda do polimorfismo, podemos juntar esses comportamentos e formar um sistema maior.
+A principal situação que faz emergir o Design Pattern State é a necessidade de implementação de uma máquina de estados. 
+Geralmente, o controle das possíveis transições são vários e complexos, fazendo com que a implementação não seja simples. 
+O State auxilia a manter o controle dos estados simples e organizados através da criação de classes que representem cada 
+estado e saiba controlar as transições.
+
+---
+Builder: Sempre que tivermos um objeto complexo de ser criado, que possui diversos atributos, 
+ou que possui uma lógica de criação complicada, podemos esconder tudo isso em um Builder.
+
+em casos onde diversos atributos sejam opcionais, precisaríamos ter uma combinação gigante de construtores 
+(uma para cada possível combinação de atributos obrigatórios e opcionais), tornando o código difícil de manter. 
+Além disso, como construir esse objeto é complicado, colocar essa regra no construtor do objeto, 
+só faz com que ele tenha agora mais uma responsabilidade.
+
+Em outros casos, poderiamos ter diversos ifs dentro do construtor, quanto mais complexo, 
+pode ser mais prático e fácil de manter isolá-lo.
+
+O Builder possibilita a separação da complexidade da criação desse objeto em uma classe específica para isso, 
+além de possibilitar a implementação de atributos opcionais mais facilmente.
+
+Podemos aliviar o problema dos diversos construtores utilizando argumentos opcionais. 
+Quando declaramos o construtor, podemos atribuir valores padrões para alguns de seus argumentos e se o usuário 
+não fornecer o valor para esses argumentos o padrão será utilizado.
+
+---
+Observer: Aconteceu algo no sistema, preciso notificar uma classe.
+
+Quando temos classes que serão notificadas sobre alguma coisa e um notificador que, assim que executa uma ação, 
+notifica todos que estão na lista sobre o evento ocorrido, implementamos o padrão de projeto conhecido por Observer.
+
+
+
+Parabéns! Você chegou ao final do curso de padrões de projeto. A pergunta agora é: acabou? Não há mais o que estudar?
+
+Pelo contrário, ainda existem muitas coisas a serem estudadas! O primeiro, e talvez mais importante ponto desse curso, 
+é entender o bom uso de orientação a objetos, que todos os padrões de projeto fazem tanto uso.
+
+Você deve ter reparado, ao longo do curso, que todos os padrões de projeto tentam desacoplar seu código, 
+além de criar classes coesas, com poucas responsabilidades. Para isso, todos eles fazem uso de abstrações, 
+sejam elas implementadas através de interfaces ou classes abstratas, e separam o tempo todo as diversas responsabilidades 
+em pequenas classes. Observe como os padrões resolveram problemas complexos do mundo procedural de maneira clara e simples. 
+Veja as ideias por trás dele, e adapte-os para o seu problema. Lembre-se que no final, o que importa é código de qualidade.
+
+Existem ainda muitos outros padrões de projeto espalhados por aí. Padrões que visam ajudar na solução dos mais diversos tipos de problemas. 
+Como sempre, ao ver um padrão, entenda a motivação do padrão; a razão dele existir. Não vá direto para a implementação. 
+Um padrão é mais do que uma implementação, mas sim um conceito, uma ideia de como resolver um problema.
+
+Esperamos que essa ideia tenha ficado clara ao longo do curso. Refaça os exercícios, 
+leia novamente as definições dos padrões que você estudou em livros ou internet, e reforce seus conceitos.
+
+Mas no final, lembre-se: o que importa é código de qualidade. Se você implementou uma solução que faz uso de boa orientação a objetos, 
+mas não sabe qual padrão usou, não tem problema; o seu código e os outros desenvolvedores agradecem mesmo assim!
